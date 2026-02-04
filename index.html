@@ -1,1 +1,74 @@
-1
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vita OS - Alltagsbegleitung Management</title>
+
+  <!-- Meta -->
+  <meta name="description" content="Vita OS - Pflegemanagement System für Alltagsbegleitung">
+  <meta name="theme-color" content="#00A499">
+
+  <!-- PWA Manifest (optional - kann auskommentiert bleiben bei lokalem Betrieb) -->
+  <!-- <link rel="manifest" href="manifest.json"> -->
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="styles/main.css">
+  <link rel="stylesheet" href="styles/tacho.css">
+  <link rel="stylesheet" href="styles/tacho-ergaenzung.css">
+  <link rel="stylesheet" href="styles/kalender.css">
+</head>
+<body>
+
+  <!-- APP CONTAINER -->
+  <div id="app">
+    <!-- Content wird von JavaScript gerendert -->
+  </div>
+
+  <!-- SCRIPTS -->
+
+  <!-- 1. Core -->
+  <script src="data.js"></script>
+  <script src="utils.js"></script>
+
+  <!-- 2. Components -->
+  <script src="components/modal.js"></script>
+  <script src="components/toast.js"></script>
+  <script src="components/navigation.js"></script>
+  <script src="components/kundentacho.js"></script>
+
+  <!-- 3. Features -->
+  <script src="features/patient-form.js"></script>
+  <script src="features/signature-pad.js"></script>
+  <script src="features/kalender.js"></script>
+  <script src="features/leistung-picker.js"></script>
+
+  <!-- 4. Views -->
+  <script src="views/login.js"></script>
+  <script src="views/home.js"></script>
+  <script src="views/besuche.js"></script>
+  <script src="views/patienten.js"></script>
+  <script src="views/abrechnung.js"></script>
+  <script src="views/kalender.js"></script>
+  <script src="views/statistiken.js"></script>
+  <script src="views/profil.js"></script>
+
+  <!-- 5. App (muss zuletzt geladen werden) -->
+  <script src="app.js"></script>
+  
+  
+  <!-- APP CONTAINER -->
+<div id="app">
+  <!-- Content wird von JavaScript gerendert -->
+</div>
+
+<!-- Modal Root -->
+<div id="modal-root"></div>
+
+<!-- Toast Container -->
+<div id="toast-container"></div>
+
+<!-- SCRIPTS -->
+
+</body>
+</html>

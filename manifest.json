@@ -1,0 +1,9 @@
+{
+  "name": "Vita OS - Pflegeabrechnung",
+  "short_name": "Vita OS",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#FFFFFF",
+  "theme_color": "#00A499",
+  "lang": "de-DE"
+}

@@ -1,0 +1,318 @@
+/* ===================================
+   KALENDER STYLES
+   =================================== */
+
+.kalender-view {
+  background: var(--white);
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+
+.kalender-toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 24px;
+  border-bottom: 2px solid var(--border);
+  gap: 16px;
+}
+
+.kalender-nav {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+#kalender-titel {
+  margin: 0;
+  font-size: 1.5rem;
+  font-weight: 700;
+  flex: 1;
+  text-align: center;
+}
+
+.kalender-view-switcher {
+  display: flex;
+  gap: 4px;
+  background: var(--bg);
+  padding: 4px;
+  border-radius: var(--radius-sm);
+}
+
+.kalender-view-btn {
+  padding: 8px 16px;
+  border: none;
+  background: transparent;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+  color: var(--text-muted);
+  transition: all 0.2s;
+}
+
+.kalender-view-btn:hover {
+  background: var(--white);
+  color: var(--text);
+}
+
+.kalender-view-btn.active {
+  background: var(--primary);
+  color: var(--white);
+}
+
+.kalender-content {
+  padding: 24px;
+  min-height: 500px;
+}
+
+/* TAGESANSICHT */
+.tagesansicht-datum {
+  text-align: center;
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: var(--primary);
+  margin-bottom: 32px;
+  padding-bottom: 16px;
+  border-bottom: 2px solid var(--border);
+}
+
+.besuche-timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.timeline-item {
+  display: flex;
+  gap: 16px;
+  cursor: pointer;
+}
+
+.timeline-time {
+  min-width: 120px;
+  padding: 12px 16px;
+  background: var(--primary-light);
+  color: var(--primary);
+  border-radius: var(--radius-sm);
+  font-weight: 600;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.timeline-card {
+  flex: 1;
+  padding: 16px;
+  background: var(--bg);
+  border-radius: var(--radius);
+  border-left: 4px solid var(--primary);
+  transition: all 0.2s;
+}
+
+.timeline-card:hover {
+  background: var(--white);
+  box-shadow: var(--shadow);
+  transform: translateX(4px);
+}
+
+.timeline-patient {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.timeline-patient-name {
+  font-weight: 600;
+  font-size: 1.125rem;
+}
+
+.timeline-adresse {
+  font-size: 0.875rem;
+  color: var(--text-muted);
+}
+
+.timeline-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 12px;
+  padding-top: 12px;
+  border-top: 1px solid var(--border);
+}
+
+.timeline-badge {
+  padding: 4px 12px;
+  border-radius: 12px;
+  font-size: 0.875rem;
+  font-weight: 600;
+}
+
+.timeline-betrag {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--primary);
+}
+
+/* WOCHENANSICHT */
+.wochen-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 12px;
+}
+
+.wochen-tag {
+  background: var(--bg);
+  border-radius: var(--radius);
+  padding: 12px;
+  min-height: 150px;
+  cursor: pointer;
+  transition: all 0.2s;
+  border: 2px solid transparent;
+}
+
+.wochen-tag:hover {
+  background: var(--white);
+  border-color: var(--primary);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow);
+}
+
+.wochen-tag.heute {
+  background: var(--primary-light);
+  border-color: var(--primary);
+}
+
+.wochen-tag-header {
+  text-align: center;
+  margin-bottom: 12px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--border);
+}
+
+.wochen-wochentag {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.wochen-datum {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--text);
+}
+
+.wochen-tag.heute .wochen-datum {
+  color: var(--primary);
+}
+
+.wochen-besuche {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.wochen-count {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--primary);
+  margin-bottom: 4px;
+}
+
+.wochen-besuch-mini {
+  padding: 6px 8px;
+  background: var(--white);
+  border-radius: 4px;
+  font-size: 0.75rem;
+  display: flex;
+  justify-content: space-between;
+  gap: 4px;
+}
+
+.wochen-besuch-mini:hover {
+  background: var(--primary-light);
+}
+
+.wochen-mehr {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  text-align: center;
+  font-style: italic;
+  padding: 4px;
+}
+
+.wochen-leer {
+  font-size: 0.875rem;
+  color: var(--text-muted);
+  text-align: center;
+  padding: 12px 0;
+}
+
+/* MONATSANSICHT */
+.monatsansicht {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.kalender-tag-block {
+  background: var(--bg);
+  border-radius: var(--radius);
+  padding: 20px;
+}
+
+.kalender-tag-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+  padding-bottom: 12px;
+  border-bottom: 2px solid var(--border);
+}
+
+.kalender-tag-header h3 {
+  margin: 0;
+  font-size: 1.25rem;
+  color: var(--primary);
+}
+
+/* RESPONSIVE */
+@media (max-width: 1024px) {
+  .kalender-toolbar {
+    flex-wrap: wrap;
+  }
+
+  #kalender-titel {
+    order: -1;
+    width: 100%;
+    text-align: left;
+    margin-bottom: 12px;
+  }
+
+  .wochen-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .timeline-item {
+    flex-direction: column;
+  }
+
+  .timeline-time {
+    min-width: auto;
+  }
+}
+
+@media (max-width: 640px) {
+  .kalender-view-switcher {
+    width: 100%;
+  }
+
+  .kalender-view-btn {
+    flex: 1;
+    padding: 10px 8px;
+    font-size: 0.875rem;
+  }
+}
