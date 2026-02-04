@@ -23,6 +23,27 @@
   --radius-lg: 16px;
 }
 
+
+/* Touch Optimization */
+button, .btn, .btn-icon, .sidebar-item, .patient-card, 
+.besuch-card, .timeline-item, .wochen-tag {
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Hover nur auf Desktop */
+@media (hover: hover) {
+  button:hover, .btn:hover, .btn-icon:hover {
+    /* Hover-Effekte bleiben nur auf Desktop */
+  }
+}
+
+
+
+
+
+
+
 * {
   margin: 0;
   padding: 0;
