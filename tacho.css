@@ -1,0 +1,334 @@
+/* ===================================
+   KUNDENTACHO STYLES
+   =================================== */
+
+.kundentacho {
+  background: var(--white);
+  border-radius: var(--radius);
+  padding: 24px;
+}
+
+.tacho-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+  padding-bottom: 16px;
+  border-bottom: 2px solid var(--border);
+}
+
+.tacho-header h3 {
+  margin: 0;
+  font-size: 1.5rem;
+}
+
+.tacho-stundensatz {
+  background: var(--bg);
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-weight: 600;
+  color: var(--text-muted);
+}
+
+.tacho-section {
+  background: var(--bg);
+  border-radius: var(--radius);
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+.tacho-section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.tacho-section-header h4 {
+  margin: 0;
+  font-size: 1.125rem;
+}
+
+.tacho-badge {
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 0.875rem;
+  font-weight: 600;
+}
+
+.badge--success {
+  background: #D1FAE5;
+  color: #059669;
+}
+
+.badge--warning {
+  background: #FEF3C7;
+  color: #D97706;
+}
+
+.badge--danger {
+  background: #FEE2E2;
+  color: #DC2626;
+}
+
+.tacho-progress {
+  height: 32px;
+  background: #E5E7EB;
+  border-radius: 16px;
+  overflow: hidden;
+  margin-bottom: 16px;
+  position: relative;
+}
+
+.tacho-progress-bar {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: 700;
+  font-size: 0.875rem;
+  transition: width 0.5s ease;
+}
+
+.tacho-progress--success {
+  background: linear-gradient(90deg, #10B981, #059669);
+}
+
+.tacho-progress--warning {
+  background: linear-gradient(90deg, #F59E0B, #D97706);
+}
+
+.tacho-progress--danger {
+  background: linear-gradient(90deg, #EF4444, #DC2626);
+}
+
+.tacho-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin-bottom: 12px;
+}
+
+.tacho-stat {
+  text-align: center;
+  padding: 12px;
+  background: var(--white);
+  border-radius: var(--radius-sm);
+}
+
+.tacho-stat-label {
+  display: block;
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  margin-bottom: 4px;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+.tacho-stat-value {
+  display: block;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--primary);
+}
+
+.tacho-stat-sub {
+  display: block;
+  font-size: 0.875rem;
+  color: var(--text-muted);
+  margin-top: 2px;
+}
+
+.tacho-info {
+  padding: 12px;
+  background: #EFF6FF;
+  border-radius: var(--radius-sm);
+  border-left: 4px solid var(--primary);
+}
+
+.tacho-info small {
+  color: #1E40AF;
+}
+
+.tacho-warning {
+  padding: 12px;
+  background: #FEF3C7;
+  border-radius: var(--radius-sm);
+  border-left: 4px solid #F59E0B;
+}
+
+.tacho-warning small {
+  color: #92400E;
+  font-weight: 600;
+}
+
+.tacho-gesamt {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-top: 24px;
+  padding-top: 24px;
+  border-top: 2px solid var(--border);
+}
+
+.tacho-gesamt-item {
+  text-align: center;
+  padding: 20px;
+  background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+  border-radius: var(--radius);
+  color: white;
+}
+
+.tacho-gesamt-label {
+  display: block;
+  font-size: 0.875rem;
+  opacity: 0.9;
+  margin-bottom: 8px;
+}
+
+.tacho-gesamt-value {
+  display: block;
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+
+.tacho-gesamt-sub {
+  display: block;
+  font-size: 0.875rem;
+  opacity: 0.8;
+}
+
+/* MINI TACHO (auf Patientenkarte) */
+.patient-tacho-mini {
+  margin: 16px 0;
+  padding: 16px;
+  background: #F9FAFB;
+  border-radius: var(--radius-sm);
+  border: 2px solid var(--border);
+  transition: all 0.2s;
+}
+
+.patient-tacho-mini:hover {
+  border-color: var(--primary);
+  background: var(--white);
+}
+
+.tacho-mini-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+  font-weight: 600;
+  font-size: 0.875rem;
+}
+
+.tacho-badge-mini {
+  padding: 4px 10px;
+  border-radius: 12px;
+  font-size: 0.75rem;
+  font-weight: 700;
+}
+
+.tacho-mini-stats {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin-bottom: 8px;
+}
+
+.tacho-mini-stat {
+  text-align: center;
+}
+
+.tacho-mini-label {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  margin-bottom: 4px;
+}
+
+.tacho-mini-value {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--primary);
+}
+
+.tacho-mini-hint {
+  text-align: center;
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  font-style: italic;
+}
+
+.text-danger {
+  color: var(--danger) !important;
+}
+
+.text-success {
+  color: var(--success) !important;
+}
+
+/* COMPACT TACHO */
+.kundentacho-compact {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px;
+  background: var(--bg);
+  border-radius: var(--radius-sm);
+}
+
+.tacho-compact-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+}
+
+.tacho-compact--success {
+  background: #D1FAE5;
+}
+
+.tacho-compact--warning {
+  background: #FEF3C7;
+}
+
+.tacho-compact--danger {
+  background: #FEE2E2;
+}
+
+.tacho-compact-info {
+  flex: 1;
+}
+
+.tacho-compact-label {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+.tacho-compact-value {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--text);
+}
+
+/* Responsive */
+@media (max-width: 640px) {
+  .tacho-stats {
+    grid-template-columns: 1fr;
+  }
+
+  .tacho-gesamt {
+    grid-template-columns: 1fr;
+  }
+
+  .tacho-mini-stats {
+    grid-template-columns: 1fr;
+  }
+}

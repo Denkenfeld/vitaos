@@ -1,0 +1,313 @@
+/* ===================================
+   BESUCH FORM & DETAILS
+   =================================== */
+
+.besuch-form {
+  max-width: 100%;
+}
+
+.form-section {
+  margin-bottom: 32px;
+  padding-bottom: 24px;
+  border-bottom: 1px solid var(--border);
+}
+
+.form-section:last-of-type {
+  border-bottom: none;
+}
+
+.section-title {
+  font-size: 1.125rem;
+  font-weight: 700;
+  margin-bottom: 16px;
+  color: var(--text);
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 16px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.form-label {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--text);
+}
+
+.form-control {
+  padding: 10px 12px;
+  border: 2px solid var(--border);
+  border-radius: var(--radius-sm);
+  font-size: 1rem;
+  transition: all 0.2s;
+  font-family: inherit;
+}
+
+.form-control:focus {
+  outline: none;
+  border-color: var(--primary);
+  background: var(--white);
+}
+
+textarea.form-control {
+  resize: vertical;
+  min-height: 80px;
+}
+
+select.form-control {
+  cursor: pointer;
+}
+
+/* LEISTUNGS-BLÖCKE */
+.leistungs-block {
+  background: var(--bg);
+  border-radius: var(--radius);
+  padding: 16px;
+  margin-bottom: 16px;
+}
+
+.leistungs-block h4 {
+  margin: 0 0 12px 0;
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.besuch-gesamt {
+  background: var(--primary-light);
+  padding: 16px;
+  border-radius: var(--radius);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-top: 16px;
+}
+
+.besuch-gesamt-label {
+  color: var(--text);
+}
+
+.besuch-gesamt-wert {
+  color: var(--primary);
+  font-size: 1.5rem;
+}
+
+/* DETAIL MODAL */
+.detail-section {
+  margin-bottom: 24px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid var(--border);
+}
+
+.detail-section:last-of-type {
+  border-bottom: none;
+}
+
+.detail-section h3 {
+  font-size: 1.125rem;
+  font-weight: 700;
+  margin-bottom: 12px;
+  color: var(--text);
+}
+
+.detail-info-box {
+  background: var(--bg);
+  border-radius: var(--radius-sm);
+  padding: 16px;
+}
+
+.detail-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 8px 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.detail-row:last-child {
+  border-bottom: none;
+}
+
+.detail-label {
+  color: var(--text-muted);
+  font-weight: 500;
+}
+
+.detail-value {
+  font-weight: 600;
+  color: var(--text);
+}
+
+.status {
+  padding: 4px 12px;
+  border-radius: 12px;
+  font-size: 0.875rem;
+  font-weight: 600;
+}
+
+.status--success {
+  background: #D1FAE5;
+  color: #065F46;
+}
+
+.status--warning {
+  background: #FEF3C7;
+  color: #92400E;
+}
+
+/* LEISTUNGS-DETAIL-BLÖCKE */
+.leistungs-detail-block {
+  background: var(--bg);
+  border-radius: var(--radius-sm);
+  padding: 12px 16px;
+  margin-bottom: 12px;
+}
+
+.leistungs-detail-block h4 {
+  margin: 0 0 8px 0;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--text-muted);
+}
+
+.leistungs-detail-block.section-45b {
+  background: #D1FAE5;
+  border-left: 4px solid #10B981;
+}
+
+.leistungs-detail-block.section-36 {
+  background: #DBEAFE;
+  border-left: 4px solid #3B82F6;
+}
+
+.leistungs-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.leistungs-betrag {
+  font-weight: 700;
+  font-size: 1.125rem;
+  color: var(--primary);
+}
+
+.detail-gesamt {
+  background: var(--primary-light);
+  padding: 16px;
+  border-radius: var(--radius);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 16px;
+}
+
+.detail-gesamt-label {
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: var(--text);
+}
+
+.detail-gesamt-wert {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--primary);
+}
+
+/* BUDGET MINI */
+.detail-budget-mini {
+  background: var(--bg);
+  border-radius: var(--radius-sm);
+  padding: 16px;
+}
+
+.budget-mini-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 8px 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.budget-mini-item:last-child {
+  border-bottom: none;
+}
+
+.budget-mini-label {
+  color: var(--text-muted);
+}
+
+.budget-mini-value {
+  font-weight: 700;
+  color: var(--text);
+}
+
+/* NOTIZEN */
+.detail-notizen {
+  background: #FEF3C7;
+  padding: 12px 16px;
+  border-radius: var(--radius-sm);
+  border-left: 4px solid var(--warning);
+  white-space: pre-wrap;
+}
+
+/* AKTIONEN */
+.detail-actions {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.detail-actions .btn {
+  flex: 1;
+  min-width: 150px;
+}
+
+/* KALENDER ACTIONS */
+.kalender-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+
+  .besuch-gesamt {
+    font-size: 1rem;
+  }
+
+  .besuch-gesamt-wert {
+    font-size: 1.25rem;
+  }
+
+  .detail-actions {
+    flex-direction: column;
+  }
+
+  .detail-actions .btn {
+    width: 100%;
+  }
+
+  .kalender-actions {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .kalender-view-switcher {
+    width: 100%;
+  }
+
+  .kalender-actions .btn {
+    width: 100%;
+  }
+}

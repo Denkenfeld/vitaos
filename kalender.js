@@ -1,4 +1,4 @@
-let kalenderAnsicht = 'monat'; // 'tag', 'woche', 'monat'
+let kalenderAnsicht = 'monat';
 let kalenderDatum = new Date();
 
 function renderKalenderView() {
@@ -15,10 +15,15 @@ function renderKalenderView() {
 
         <h2 id="kalender-titel">${getKalenderTitel()}</h2>
 
-        <div class="kalender-view-switcher">
-          <button class="kalender-view-btn ${kalenderAnsicht === 'tag' ? 'active' : ''}" onclick="setKalenderAnsicht('tag')">Tag</button>
-          <button class="kalender-view-btn ${kalenderAnsicht === 'woche' ? 'active' : ''}" onclick="setKalenderAnsicht('woche')">Woche</button>
-          <button class="kalender-view-btn ${kalenderAnsicht === 'monat' ? 'active' : ''}" onclick="setKalenderAnsicht('monat')">Monat</button>
+        <div class="kalender-actions">
+          <div class="kalender-view-switcher">
+            <button class="kalender-view-btn ${kalenderAnsicht === 'tag' ? 'active' : ''}" onclick="setKalenderAnsicht('tag')">Tag</button>
+            <button class="kalender-view-btn ${kalenderAnsicht === 'woche' ? 'active' : ''}" onclick="setKalenderAnsicht('woche')">Woche</button>
+            <button class="kalender-view-btn ${kalenderAnsicht === 'monat' ? 'active' : ''}" onclick="setKalenderAnsicht('monat')">Monat</button>
+          </div>
+          <button class="btn btn--primary" onclick="openBesuchForm()" style="margin-left: 12px;">
+            ➕ Neuer Besuch
+          </button>
         </div>
       </div>
 

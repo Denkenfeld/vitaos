@@ -9,14 +9,23 @@
   <meta name="description" content="Vita OS - Pflegemanagement System für Alltagsbegleitung">
   <meta name="theme-color" content="#00A499">
 
-  <!-- PWA Manifest (optional - kann auskommentiert bleiben bei lokalem Betrieb) -->
-  <!-- <link rel="manifest" href="manifest.json"> -->
+  <!-- Touch Optimization -->
+  <style>
+    * {
+      -webkit-tap-highlight-color: transparent;
+    }
+    button, .btn, .btn-icon, a {
+      touch-action: manipulation;
+      cursor: pointer;
+    }
+  </style>
 
   <!-- Styles -->
   <link rel="stylesheet" href="styles/main.css">
   <link rel="stylesheet" href="styles/tacho.css">
   <link rel="stylesheet" href="styles/tacho-ergaenzung.css">
   <link rel="stylesheet" href="styles/kalender.css">
+  <link rel="stylesheet" href="styles/besuch-form.css">
 </head>
 <body>
 
@@ -24,6 +33,12 @@
   <div id="app">
     <!-- Content wird von JavaScript gerendert -->
   </div>
+
+  <!-- Modal Root -->
+  <div id="modal-root"></div>
+
+  <!-- Toast Container -->
+  <div id="toast-container"></div>
 
   <!-- SCRIPTS -->
 
@@ -42,6 +57,7 @@
   <script src="features/signature-pad.js"></script>
   <script src="features/kalender.js"></script>
   <script src="features/leistung-picker.js"></script>
+  <script src="features/besuch-form.js"></script>
 
   <!-- 4. Views -->
   <script src="views/login.js"></script>
@@ -55,20 +71,6 @@
 
   <!-- 5. App (muss zuletzt geladen werden) -->
   <script src="app.js"></script>
-  
-  
-  <!-- APP CONTAINER -->
-<div id="app">
-  <!-- Content wird von JavaScript gerendert -->
-</div>
-
-<!-- Modal Root -->
-<div id="modal-root"></div>
-
-<!-- Toast Container -->
-<div id="toast-container"></div>
-
-<!-- SCRIPTS -->
 
 </body>
 </html>

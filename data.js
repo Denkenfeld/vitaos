@@ -121,13 +121,24 @@ function generateDemoBesuche() {
     const leistungen = [];
     leistungen.push({...LEISTUNGSKATALOG[9], menge: 1});
 
-    const hauptleistung = LEISTUNGSKATALOG[Math.floor(Math.random() * 8)];
     const stundenAnzahl = Math.random() > 0.5 ? 2 : 3;
-    leistungen.push({...hauptleistung, menge: stundenAnzahl});
-
     const stundensatz = patient.stundensatzNormal;
+
+    // Bestimme Abrechnungsart
+    const use36 = patient.sachleistung40 && Math.random() > 0.5;
+    const abrechnungsart = use36 ? '§ 36' : '§ 45b';
+
+    const stunden45b = use36 ? 0 : stundenAnzahl;
+    const stunden36 = use36 ? stundenAnzahl : 0;
+
+    if (stunden45b > 0) {
+      leistungen.push({...LEISTUNGSKATALOG[0], betrag: stundensatz, menge: stunden45b});
+    }
+    if (stunden36 > 0) {
+      leistungen.push({...LEISTUNGSKATALOG[8], betrag: stundensatz, menge: stunden36});
+    }
+
     const gesamtBetrag = 5.00 + (stundenAnzahl * stundensatz);
-    const abrechnungsart = patient.sachleistung40 && Math.random() > 0.5 ? '§ 36' : '§ 45b';
 
     besuche.push({
       id: i + 1,
@@ -142,8 +153,11 @@ function generateDemoBesuche() {
       leistungen: leistungen,
       gesamtBetrag: gesamtBetrag.toFixed(2),
       stundenGesamt: stundenAnzahl,
-      unterschrift: datum <= heute && Math.random() > 0.15 ? 'vorhanden' : null,
-      abrechnungsart: abrechnungsart
+      stunden45b: stunden45b,
+      stunden36: stunden36,
+      abrechnungsart: abrechnungsart,
+      notizen: Math.random() > 0.7 ? 'Patient war heute gut gelaunt und aktiv.' : '',
+      unterschrift: datum <= heute && Math.random() > 0.15 ? 'vorhanden' : null
     });
   }
 
@@ -168,7 +182,6 @@ function calculateAge(geburtsdatum) {
   return age;
 }
 
-// KUNDENTACHO mit Anspar-Logik
 function calculateKundentacho(patientId, targetMonth = null, targetYear = null) {
   const patient = findPatient(patientId);
   if (!patient) return null;
@@ -178,10 +191,8 @@ function calculateKundentacho(patientId, targetMonth = null, targetYear = null) 
   const year = targetYear !== null ? targetYear : heute.getFullYear();
   const aktuellesDatum = new Date(year, month, 1);
 
-  // § 45b Budget berechnen
-  let budget45b = ENTLASTUNGSBETRAG_MONATLICH; // Standard 131€
+  let budget45b = ENTLASTUNGSBETRAG_MONATLICH;
 
-  // Prüfe ob angespartes Budget noch gültig ist
   if (patient.angespartBetrag > 0 && patient.angespartGueltigBis) {
     const gueltigBis = new Date(patient.angespartGueltigBis);
     if (aktuellesDatum <= gueltigBis) {
@@ -189,10 +200,8 @@ function calculateKundentacho(patientId, targetMonth = null, targetYear = null) 
     }
   }
 
-  // § 36 Budget
   const budget36 = patient.sachleistung40 ? BUDGET_36_BY_PFLEGEGRAD[patient.pflegegrad] || 0 : 0;
 
-  // Gebuchte Besuche im Monat
   const besucheMonat = besuchsData.filter(b => {
     const d = new Date(b.datum);
     return b.patientId === patientId && d.getMonth() === month && d.getFullYear() === year;
